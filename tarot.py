@@ -54,7 +54,7 @@ def get_message(message):
             question = "`Да`"
         else:
             question = "`Нет`"
-        bot.send_message(message.chat.id, f"Ответ карт: {question}\nИ помни — карты *никогда* не врут!\n\nЧтобы задать ещё вопрос — просто напиши его в чат", parse_mode = 'Markdown')
+        bot.send_message(message.chat.id, f"Ответ карт: {question}\nИ помни — карты *никогда* не врут!\n\nЧтобы задать ещё вопрос — просто напиши его в чат.\nЕсли какие-то команды *не сработали* — вызови их второй раз. ", parse_mode = 'Markdown')
         bot.register_next_step_handler(message, get_message)
         
 bot.polling(none_stop = True)
