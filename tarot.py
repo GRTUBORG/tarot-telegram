@@ -1,6 +1,5 @@
 import telebot
 import random
-import httpx
 import os
 import time
 import requests
