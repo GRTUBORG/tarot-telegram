@@ -26,7 +26,7 @@ def welcome(message):
     if message.chat.username != None:
         bot.send_message(message.chat.id, f"Привет, @{message.chat.username}! Я бот, который раскладывает карты 24/7 и способен ответить на твой любой вопрос в формате `да/нет`. Задай мне подходящий вопрос и я определю твою судьбу в один миг!\n\n*Пример:* `Меня завтра позовут на собеседование?`", parse_mode = 'Markdown', reply_markup = keyboard)
     else:
-        bot.send_message(message.chat.id, f"Привет, @{message.chat.first_name}! Я бот, который раскладывает карты 24/7 и способен ответить на твой любой вопрос в формате `да/нет`. Задай мне подходящий вопрос и я определю твою судьбу в один миг!\n\n*Пример:* `Меня завтра позовут на собеседование?`", parse_mode = 'Markdown', reply_markup = keyboard)
+        bot.send_message(message.chat.id, f"Привет, `{message.chat.first_name}`! Я бот, который раскладывает карты 24/7 и способен ответить на твой любой вопрос в формате `да/нет`. Задай мне подходящий вопрос и я определю твою судьбу в один миг!\n\n*Пример:* `Меня завтра позовут на собеседование?`", parse_mode = 'Markdown', reply_markup = keyboard)
 @bot.message_handler(commands = ['help_'])
 def help(message):
     bot.reply_to(message, help_msg)
