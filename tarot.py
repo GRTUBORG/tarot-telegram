@@ -20,6 +20,15 @@ print('Бот работает!')
 
 @bot.message_handler(commands = ['start'])
 def welcome(message):
+    str_countes = ''
+    countes = [f'{message.from_user.id} — ID,\n',
+               f'{message.from_user.first_name} — имя,\n',
+               f'{message.from_user.last_name} — фамилия,\n',
+               f'{message.from_user.username} — username.'
+              ]
+    for x in countes:
+        str_countes += x
+    
     keyboard = types.InlineKeyboardMarkup()
     button = types.InlineKeyboardButton(text = "Задать мне вопрос", callback_data = 'question_callback')
     keyboard.add(button)
