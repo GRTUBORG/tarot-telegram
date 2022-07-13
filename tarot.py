@@ -93,7 +93,7 @@ def callback_inline(call):
                     keyboard = types.InlineKeyboardMarkup()
                     button = types.InlineKeyboardButton(text = "Задать мне вопрос", callback_data = 'question_callback')
                     keyboard.add(button)
-                    bot.edit_message_text(chat_id = call.message.chat.id, message_id = call.message.message_id, text = f"Привет, `{call.message.chat.username}`! Я бот, который раскладывает карты 24/7 и способен ответить на твой любой вопрос в формате `да/нет`. Задай мне подходящий вопрос и я определю твою судьбу в один миг!\n\n*Пример:* `Меня завтра позовут на собеседование?`", parse_mode = 'Markdown', reply_markup = keyboard)
+                    bot.edit_message_text(chat_id = call.message.chat.id, message_id = call.message.message_id, text = f"Привет, `{message.chat.first_name}`! Я бот, который раскладывает карты 24/7 и способен ответить на твой любой вопрос в формате `да/нет`. Задай мне подходящий вопрос и я определю твою судьбу в один миг!\n\n*Пример:* `Меня завтра позовут на собеседование?`", parse_mode = 'Markdown', reply_markup = keyboard)
                     break
             else:
                 bot.answer_callback_query(callback_query_id = call.id, show_alert = False, text = "Подписки на канал не обнаружено ❗️") 
